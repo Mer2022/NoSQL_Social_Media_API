@@ -1,3 +1,4 @@
+
 const { User, Thought } = require("../models");
 const {errors}= require('../messages/messages');
 const {success}= require('../messages/messages');
@@ -45,7 +46,7 @@ const userController = {
       });
   },
 
-  // create user
+  // user created
   createUser({ body }, res) {
     User.sa
     User.create(body)
@@ -53,7 +54,7 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
-  // update user by id
+  // user by id is updated
   updateUser({ params, body }, res) {
     const {id}=params
     User.findOneAndUpdate({ _id: id }, body, {
